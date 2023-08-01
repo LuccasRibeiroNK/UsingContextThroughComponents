@@ -27,34 +27,37 @@ const Arquivo1: React.FC = () => {
   return (
     <CounterContext.Provider value={{ count, setCount }}>
       <div className="">
-        <div className="h-54 grid grid-cols-3 gap-6 border-solid rounded-md border-2 border-sky-500 justify-items-center ">
+        <div className="grid grid-rows border-solid rounded-md border-2 justify-items-center pb-20">
           <Router>
-            <div>
-              <div className="pb-4 text-2xl pt-4">Counter Component</div>
-              {/* <p className="pb-4 text-lg ">Count value: {count}</p> */}
-
-              <div>
-                <div className="pb-4">
-                  <Link to="/page1">
-                    <button>Link to First Page</button>
-                  </Link>
-                </div>
-                <div className="pb-4">
-                  <Link to="/page2">
-                    <button>Link to Second Page</button>
-                  </Link>
+            <div className="pt-20">
+              <div className="border-solid rounded-md border-2 border-sky-500 w-96 pb-6">
+                <div className="pb-4 text-2xl pt-4">Counter Component</div>
+                <ResetCount />
+                <div>
+                  <div className="pb-4">
+                    <Link to="/page1">
+                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
+                        Load First Component
+                      </button>
+                    </Link>
+                  </div>
+                  <div className="">
+                    <Link to="/page2">
+                      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
+                        Load Second Component
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
+              <div className="border-solid rounded-md border-2 border-sky-500 mt-4 pb-6">
+                <Routes>
+                  <Route path="/page1" element={<Page1 />} />
+                  <Route path="/page2" element={<Page2 />} />
+                </Routes>
+              </div>
             </div>
-            <div>
-              <ResetCount />
-            </div>
-            <Routes>
-              <Route path="/page1" element={<Page1 />} />
-              <Route path="/page2" element={<Page2 />} />
-            </Routes>
           </Router>
-          <div></div>
         </div>
       </div>
     </CounterContext.Provider>

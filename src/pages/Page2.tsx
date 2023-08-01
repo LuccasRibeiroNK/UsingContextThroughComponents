@@ -17,11 +17,17 @@ const Page2: React.FC = () => {
     React.useContext<CounterContextType>(CounterContext);
 
   return (
-    <div>
-      <h2 className="pb-16 pt-4 text-2xl">Page 2</h2>
+    <div className="">
+      <h2 className="pb-10 pt-4 text-2xl">Second Component</h2>
+      <p className="pb-4">Here you can add 10 to total Count </p>
       {/* <p className="pb-4 text-lg">Count value: {count}</p> */}
-      <button onClick={() => setCount(count + 10)}>Increment by 10</button>
-          </div>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+        onClick={() => setCount(count + 10)}
+      >
+        Increment by 10
+      </button>
+    </div>
   );
 };
 

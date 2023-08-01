@@ -21,10 +21,16 @@ const Page1: React.FC = () => {
 
   return (
     <>
-      <div>
-        <div className="pb-16 pt-4 text-2xl">Page 1</div>
+      <div className=" ">
+        <div className="pb-10 pt-4 text-2xl">First Component</div>
+        <p className="pb-4">Here you can add 1 to total Count </p>
         {/* <p className="pb-4 text-lg">Count value: {count}</p> */}
-        <button onClick={handleAddTen}>Increment by 1</button>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+          onClick={handleAddTen}
+        >
+          Increment by 1
+        </button>
       </div>
     </>
   );
